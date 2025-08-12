@@ -1,14 +1,55 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-    <script type="module" crossorigin src="/assets/index-Cy2Cw03H.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-D8b4DHJx.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal de Bien-être au Travail</title>
+  <!-- 1. Tailwind CSS CDN for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+<script type="importmap">
+{
+  "imports": {
+    "vite": "https://esm.sh/vite@^7.1.2",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.0.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-gray-50">
+  <div class="max-w-4xl mx-auto p-4 sm:p-6">
+    <div class="bg-white rounded-lg shadow-lg p-6">
+      <!-- Header -->
+      <header class="mb-6">
+        <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">Journal de Bien-être au Travail</h1>
+        <p class="text-gray-600">Une activité interactive pour identifier les signaux négatifs et améliorer votre bien-être professionnel.</p>
+      </header>
+
+      <!-- Main Navigation -->
+      <nav class="flex flex-wrap gap-2 mb-6 border-b border-gray-200 pb-4">
+        <button id="nav-entry" aria-label="Saisir une entrée de journal" class="flex items-center px-4 py-2 rounded-lg transition-colors text-sm font-medium"></button>
+        <button id="nav-view" aria-label="Voir mes entrées de journal" class="flex items-center px-4 py-2 rounded-lg transition-colors text-sm font-medium"></button>
+        <button id="nav-analysis" aria-label="Analyser mes entrées" class="flex items-center px-4 py-2 rounded-lg transition-colors text-sm font-medium"></button>
+      </nav>
+
+      <!-- Day Navigation (dynamically shown) -->
+      <div id="day-navigation-container" class="hidden"></div>
+
+      <!-- Main Content Area -->
+      <main id="content-container" class="min-h-[300px]"></main>
+
+      <!-- Footer Info -->
+      <footer class="mt-8 p-4 bg-gray-50 rounded-lg border-l-4 border-gray-600">
+        <h4 class="font-medium text-gray-800 mb-2 flex items-center">
+          <span id="footer-icon" class="mr-2"></span>
+          <span id="footer-title"></span>
+        </h4>
+        <ul id="footer-list" class="text-sm text-gray-700 space-y-1 list-disc list-inside"></ul>
+      </footer>
+    </div>
+  </div>
+  <!-- 2. The script tag to load your vanilla JS app -->
+  <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
 </html>
